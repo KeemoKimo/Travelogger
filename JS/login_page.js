@@ -41,13 +41,13 @@ lblSignIn.onclick = function(){
     loginForm.style.display = "block"
 }
 
-btnSignIn.onclick = function(){
-    window.alert(txtUsername.value)
-    window.alert(txtPass.value)
-}
+// btnSignIn.onclick = function(){
+//     window.alert(txtUsername.value)
+//     window.alert(txtPass.value)
+// }
 
-btnCreate.onclick = function(){
-    window.alert(reg_txtUsername.value)
-    window.alert(reg_txtEmail.value)
-    window.alert(reg_txtPass.value)
-}
+// btnCreate.onclick = function(){
+//     window.alert(reg_txtUsername.value)
+//     window.alert(reg_txtEmail.value)
+//     window.alert(reg_txtPass.value)
+// }
