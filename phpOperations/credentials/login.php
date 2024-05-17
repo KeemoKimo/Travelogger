@@ -1,4 +1,5 @@
 <?php 
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -22,9 +23,12 @@ if($conn){
             $result = mysqli_query($conn,$sql);
             $num = mysqli_num_rows($result);
             if($num != 0){
-                echo '<script language="javascript">';
-                echo 'alert("Log in successfully!")';
-                echo '</script>';
+                $_SESSION['username'] = $username;
+                //$_SESSION['password'] = $userPass;
+                header('Location: http://localhost/Travelogger/FrontEnds/mainPage.php');
+                // echo '<script language="javascript">';
+                // echo "window.location.assign('FrontEnds\mainPage.html')";
+                // echo '</script>';
             }else{
                 echo '<script language="javascript">';
                 echo 'alert("The information you entered is wrong!")';

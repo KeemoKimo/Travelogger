@@ -28,6 +28,7 @@ if($conn){
                     echo '<script language="javascript">';
                     echo 'alert("User created successfully!")';
                     echo '</script>';
+                    header('Location: http://localhost/Travelogger/credential.php');
                 }
             }
         }else{

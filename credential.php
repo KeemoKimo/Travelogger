@@ -1,5 +1,9 @@
 <html lang="en">
 
+<?php 
+    session_start();
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,10 +56,11 @@
             <div style="margin-top: 70px; text-align: center;">
                 <button type="submit" id="btnCreate">Create Account</button>
             </div>
+            <p style="font-size: 13px; text-align: center;">*Succesful sign up will redirect back to Sign In page*</p>
             <div style="height: 1px; background-color: black; margin: 30px 50px 0px 50px;"></div>
             <div style="margin: 0 auto;width: 240px;">
-                <p style="float: left;margin-top: 30px;">Already have an account?</p>
-                <p style="float: right; margin-top: 30px;color: blue;" id="lblSignIn">Log In</p>
+                <p style="float: left;margin-top: 15px;">Already have an account?</p>
+                <p style="float: right; margin-top: 15px;color: blue;" id="lblSignIn">Log In</p>
             </div>
         </form>
      </div>
