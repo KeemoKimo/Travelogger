@@ -16,7 +16,7 @@
         <form action="phpOperations\credentials\login.php" method="post">
             <h1 style="text-align: center; padding-top: 60px;">Sign In</h1>
             <div style="margin-top: 60px;">
-                <input type="text" id="txtUsername" name="txtUsername" placeholder="Email...">
+                <input type="text" id="txtUsername" name="txtUsername" placeholder="Username...">
                 <br>
                 <div style="margin-top: 50px; width: 400px;">
                     <div style="float: left; margin-left: 100px;">
