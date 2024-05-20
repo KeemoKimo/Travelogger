@@ -6,14 +6,53 @@
     font-style: normal;
 }
 
-body{
+body {
     font-family: manrope;
 }
 
-#imgProfile{
+#imgProfile {
     border-radius: 50%;
     display: block;
     height: 400px;
     width: 400px;
     object-fit: cover;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#lblEdit {
+    text-align: center;
+    margin-top: 50px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 10px 40px 10px 40px;
+}
+
+#formDiv{
+    text-align: center;
+}
+
+#btnSubmit{
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 10px 40px 10px 40px;
+    display: none;
 }

@@ -25,9 +25,6 @@
         <div class="rightTop">
             <?php 
                 $username = $_SESSION['username'];
-                echo '<script language="javascript">';
-                echo "alert('$username')";
-                echo '</script>';
                 $res = mysqli_query($conn, "select * from users where userName = '$username'");
                 while($row = mysqli_fetch_assoc($res)){
             ?>
