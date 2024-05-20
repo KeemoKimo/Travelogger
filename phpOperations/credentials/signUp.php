@@ -9,6 +9,7 @@ if($conn){
         $username = $_POST["reg_txtUsername"];
         $userEmail = $_POST["reg_txtEmail"];
         $userPass = $_POST["reg_txtPassword"];
+        $userImg = "userPFP/empty.png";
     
         $sql = "Select * from users where userName='$username'";
         $result = mysqli_query($conn,$sql);
@@ -21,8 +22,8 @@ if($conn){
                 echo '</script>';
             }else{
                 $sql = "INSERT INTO `users` ( `userName`,  
-                `userEmail`, `userPassword`) VALUES ('$username',  
-                '$userEmail', '$userPass')";
+                `userEmail`, `userPassword`, `file`) VALUES ('$username',  
+                '$userEmail', '$userPass', '$userImg')";
                 $result = mysqli_query($conn,$sql);
                 if($result){
                     echo '<script language="javascript">';

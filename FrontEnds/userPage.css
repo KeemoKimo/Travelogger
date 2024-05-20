@@ -9,3 +9,11 @@
 body{
     font-family: manrope;
 }
+
+#imgProfile{
+    border-radius: 50%;
+    display: block;
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+}
