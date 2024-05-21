@@ -17,6 +17,10 @@ if($conn){
         if($num == 0){ 
             echo '<script language="javascript">';
             echo 'alert("This user does not exist!")';
+            //echo 'window.location.reload()';
+            echo '</script>';
+            echo '<script language="javascript">';
+            echo 'document.location.href = "http://localhost/Travelogger/credential.php"';
             echo '</script>';
         }else{
             $sql = "Select * from users where userName = '$username' AND userPassword = '$userPass'";
@@ -24,14 +28,11 @@ if($conn){
             $num = mysqli_num_rows($result);
             if($num != 0){
                 $_SESSION['username'] = $username;
-                //$_SESSION['password'] = $userPass;
                 header('Location: http://localhost/Travelogger/FrontEnds/mainPage.php');
-                // echo '<script language="javascript">';
-                // echo "window.location.assign('FrontEnds\mainPage.html')";
-                // echo '</script>';
             }else{
                 echo '<script language="javascript">';
                 echo 'alert("The information you entered is wrong!")';
+                echo 'document.location.href = "http://localhost/Travelogger/credential.php"';
                 echo '</script>';
             }
         }
