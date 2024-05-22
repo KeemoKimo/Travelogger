@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="mainPage.css">
+    <link rel="stylesheet" href="mainPage.css?v=<?php echo time(); ?>">
     <title>Main</title>
 
 </head>
@@ -32,10 +32,40 @@
             <?php } ?>
         </div>
     </div>
+    <div id="openUpClickPfp">
+        <div id="editProfileContainer">
+            Edit profile
+        </div>
+        <div id="logOutContainer">
+            Log out
+        </div>
+    </div>
     <script>
+        var pfpVar = 0
         document.getElementById("imgProfile").onclick = function () {
-            document.location.href = 'http://localhost/Travelogger/FrontEnds/userPage.php';
+            if(pfpVar == 1){
+                pfpVar = 0
+                //console.log(pfpVar)
+                document.getElementById("openUpClickPfp").style.display = "none"
+                document.getElementById("editProfileContainer").style.display = "none"
+                document.getElementById("logOutContainer").style.display = "none"
+            }else if(pfpVar == 0){
+                pfpVar = 1
+                //console.log(pfpVar)
+                document.getElementById("openUpClickPfp").style.display = "block"
+                document.getElementById("editProfileContainer").style.display = "block"
+                document.getElementById("logOutContainer").style.display = "block"
+            } 
+
+            document.getElementById("editProfileContainer").onclick =function(){
+                document.location.href = 'http://localhost/Travelogger/FrontEnds/userPage.php'
+            }
+
+            document.getElementById("logOutContainer").onclick =function(){
+                document.location.href = 'http://localhost/Travelogger/credential.php'
+            }
         }
+        
     </script>
 </body>
 
