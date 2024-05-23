@@ -57,80 +57,11 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="userPage.css">
+    <link rel="stylesheet" href="userPage.css?v=<?php echo time(); ?>">
     <title>Edit Profile</title>
 </head>
 
 <body>
-    <style>
-        #editNameWrapper {
-            text-align: center;
-        }
-
-        #editNameDiv {
-            display: inline-block;
-        }
-
-        #imgEdit {
-            cursor: pointer;
-        }
-
-        #editPopUp {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            /* Stay in place */
-            z-index: 1;
-            /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%;
-            /* Full width */
-            height: 100%;
-            /* Full height */
-            overflow: auto;
-            /* Enable scroll if needed */
-            background-color: rgb(0, 0, 0);
-            /* Fallback color */
-            background-color: rgba(20, 18, 18, 0.4);
-            /* Black w/ opacity */
-        }
-
-        #editPopUp_content {
-            width: 500px;
-            height: 600px;
-            background-color: white;
-            margin-left: 37%;
-            margin-top: 8%;
-        }
-
-        #txtChangeName {
-            width: 250px;
-            height: 40px;
-            border-radius: 5px;
-            margin: 30px 0px 0px 125px;
-            padding-left: 15px;
-        }
-
-        #btnUpdate {
-            width: 150px;
-            padding: 10px;
-            background-color: green;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            display: none;
-        }
-
-        #btnUpdate:hover {
-            transition: 1s;
-            opacity: 90%;
-        }
-
-        #btnUpdate_container {
-            text-align: center;
-        }
-    </style>
     <h1 id="lblEdit">Edit profile</h1>
     <br><br><br>
     <?php
@@ -160,7 +91,6 @@ if (isset($_POST['submit'])) {
             <button type="submit" name="submit" id="btnSubmit">Submit</button>
         </form>
     </div>
-
 
 
     <div id="previewPopUp">

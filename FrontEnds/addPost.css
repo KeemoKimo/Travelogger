@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+.manrope-mainfont {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+body {
+    font-family: manrope;
+    background-color: #f2ece5;
+}
+
+#mainUploadDiv {
+    width: 1200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 150px;
+    background-color: white;
+}
+
+#lblUpload_mainUploadDiv {
+    padding-top: 60px;
+}
+
+#imgContainer {
+    width: 1050px;
+    height: 200px;
+    cursor: pointer;
+    margin-top: 60px;
+    background-color: red;
+}
+
+#moreImgContainer {
+    width: 257.5px;
+    height: 300px;
+    border: 1px solid black;
+    background-color: yellow;
+    float: right;
+    border-radius: 0 10px 10px 0;
+}
+
+#moreImgContainer h1 {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 200px;
+    
+}
+
+#imgContainer_images{
+    float: left;
+    display: flex;
+}
+
+#img_1{
+    width: 261.5px;
+    height: 300px;
+    border-radius: 10px 0 0 10px;
+    border: 1px solid black;
+}
+
+#img_2{
+    width: 261.5px;
+    height: 300px;
+    border: 1px solid black;
+}
+
+#img_3{
+    width: 261.5px;
+    height: 300px;
+    border: 1px solid black;
+}
