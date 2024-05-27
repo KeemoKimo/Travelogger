@@ -19,7 +19,7 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 <body>
     <center>
         <div id="mainUploadDiv">
-            <h1 id="lblUpload_mainUploadDiv">>+ upload a new memory +<</h1>
+            <h1 id="lblUpload_mainUploadDiv">:+ upload a new memory +:</h1>
                     <div id="imgContainer">
                         <div id="imgContainer_images">
                             <img src="../Images/cam1.jpg" alt="" id="img_1">
@@ -27,12 +27,51 @@ $conn = mysqli_connect($servername, $username, $password, $database);
                             <img src="../Images/thai1.jpg" alt="" id="img_3">
                         </div>
                         <div id="moreImgContainer">
-                            <h1>1</h1>
+                            <h1>+</h1>
                         </div>
                     </div>
-            <h1>Hello world </h1>
+                    <div id="locationContainer">
+                        <div id="locationContainer_img">
+                            <div style="display:flex;">
+                                <img src="../Images/location.png" alt="" id="imgLocation">
+                                <h4 style="font-size: 20px;">Location : </h4>
+                            </div>
+                        </div>
+                        <div id="locationContainer_desc">
+                            <input type="text" id="txtLocation" placeholder="format : areaName, countryName">
+                        </div>
+                    </div>
+                    <div id="travelDateContainer">
+                        <div id="travelDateContainer_img">
+                            <div style="display:flex;">
+                                <img src="../Images/calendar.png" alt="" id="imgCalendar">
+                                <h4 style="font-size: 20px;">Travel Date : </h4>
+                            </div>
+                        </div>
+                        <div id="travelDateContainer_desc">
+                            <input type="date" id="dateStart">
+                            <p
+                                style="margin-left: 30px;margin-right: 30px;font-weight: lighter;margin-top: 25px;font-size: 19px">
+                                to </p>
+                            <input type="date" id="dateEnd">
+                        </div>
+                    </div>
+                    <div id="writeDescriptionContainer">
+                        <textarea name="txtLongDescription" id="txtLongDescription"
+                            placeholder="Enter a description for this memory..."></textarea>
+                    </div>
+                    <div id="lblHightlight_container">
+                        <h2 id="lblCancel"><b>
+                                < </b> cancel</h2>
+                        <h2 id="lblUpload">upload memory<b> > </b></h2>
+                    </div>
         </div>
     </center>
+    <script>
+        document.getElementById("lblCancel").onclick =function(){
+            document.location.href = 'http://localhost/Travelogger/FrontEnds/mainPage.php'
+        }
+    </script>
 </body>
 
 </html>

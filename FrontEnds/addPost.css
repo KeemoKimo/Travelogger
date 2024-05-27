@@ -29,7 +29,6 @@ body {
     height: 200px;
     cursor: pointer;
     margin-top: 60px;
-    background-color: red;
 }
 
 #moreImgContainer {
@@ -45,29 +44,178 @@ body {
     text-align: center;
     vertical-align: middle;
     line-height: 200px;
-    
+
 }
 
-#imgContainer_images{
+#imgContainer_images {
     float: left;
     display: flex;
 }
 
-#img_1{
+#img_1 {
     width: 261.5px;
     height: 300px;
     border-radius: 10px 0 0 10px;
     border: 1px solid black;
 }
 
-#img_2{
+#img_2 {
     width: 261.5px;
     height: 300px;
     border: 1px solid black;
 }
 
-#img_3{
+#img_3 {
     width: 261.5px;
     height: 300px;
     border: 1px solid black;
+}
+
+#locationContainer {
+    width: 100%;
+    height: 50px;
+    padding-top: 60px;
+    display: flex;
+}
+
+
+#locationContainer_img {
+    width: 50%;
+    height: 50px;
+    float: left;
+    display: flex;
+}
+
+#imgLocation {
+    width: 40px;
+    height: 40px;
+    padding-right: 10px;
+    margin-top: 17px;
+    padding-left: 360px;
+}
+
+#locationContainer_desc {
+    width: 50%;
+    height: 50px;
+    float: right;
+}
+
+#locationContainer_desc input{
+    width: 350px;
+    height: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: left;
+    margin-left: -55px;
+    margin-top: 18px;
+    padding-left: 20px;
+    font-family: manrope;
+}
+
+#locationContainer_desc input::placeholder{
+    font-family: manrope;
+}
+
+#travelDateContainer {
+    width: 100%;
+    height: 50px;
+    padding-top: 40px;
+    display: flex;
+}
+
+
+#travelDateContainer_img {
+    width: 50%;
+    height: 50px;
+    float: left;
+    display: flex;
+}
+
+#imgCalendar {
+    width: 40px;
+    height: 40px;
+    padding-right: 10px;
+    margin-top: 17px;
+    padding-left: 360px;
+}
+
+#travelDateContainer_desc {
+    width: 50%;
+    height: 50px;
+    float: right;
+    display: flex;
+}
+
+#dateStart{
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: left;
+    margin-left: -55px;
+    margin-top: 18px;
+    padding-left: 20px;
+    font-family: manrope;
+}
+
+#dateEnd{
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 18px;
+    padding-left: 20px;
+    font-family: manrope;
+}
+
+#writeDescriptionContainer{
+    padding-bottom: 60px;
+}
+
+#txtLongDescription{
+    margin-top: 80px;
+    border-radius: 10px;
+    width: 900px;
+    height: 600px;
+    font-size: 16px;
+    padding: 20px;
+    font-family: manrope;
+}
+
+#lblHightlight_container{
+    width: 100%;
+    height: 50px;
+    padding-bottom: 60px;    
+}
+
+#lblCancel {
+    font-weight: lighter;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    margin-left: 70px;
+    font-size: 20px;
+}
+
+#lblCancel:hover{
+    color: red;
+    opacity: 70%;
+    transition: 1s;
+    font-weight: bold;
+}
+
+#lblUpload {
+    font-weight: lighter;
+    text-align: center;
+    cursor: pointer;
+    float: right;
+    margin-right: 120px;
+    font-size: 20px;
+}
+
+#lblUpload:hover{
+    color: rgb(12, 155, 12);
+    opacity: 70%;
+    transition: 1s;
+    font-weight: bold;
 }
