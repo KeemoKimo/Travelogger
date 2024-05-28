@@ -57,18 +57,21 @@ body {
     height: 300px;
     border-radius: 10px 0 0 10px;
     border: 1px solid black;
+    object-fit: cover;
 }
 
 #img_2 {
     width: 261.5px;
     height: 300px;
     border: 1px solid black;
+    object-fit: cover;
 }
 
 #img_3 {
     width: 261.5px;
     height: 300px;
     border: 1px solid black;
+    object-fit: cover;
 }
 
 #locationContainer {
