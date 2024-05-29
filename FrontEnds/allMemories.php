@@ -22,21 +22,34 @@ include ("../phpOperations/OPEN_CONN.php");
 
 <body>
     <h1>Hello <?php echo $_SESSION['userEmail'] ?></h1>
-    <h1>All Your Trips, Total : , Trip ID: </h1>
+    <h1 style="text-align: center;font-size: 40px;"> ALL TRIP MEMORIES </h1>
+    <center>
+        <div id="dividerLine"></div>
+    </center>
     <?php
     $userEmail = $_SESSION['userEmail'];
     $sql = mysqli_query($conn, "select * from tbltrips where user = '$userEmail' order by dateEnd desc");
     $rows = mysqli_fetch_all($sql, MYSQLI_ASSOC);
     foreach ($rows as $data) {
         ?>
-        <div class="card">
-            <img src="<?php echo $data['coverImg'] ?>" alt="pic" style="width:100%">
-            <div class="container">
-                <h3 style="text-align:center;"><b><?php echo $data['location'] ?></b></h3>
-                <h4 style="text-align:center;"><b><?php echo $data['dateStart'] ?> - <?php echo $data['dateEnd'] ?></b>
-                </h4>
+        <center>
+            <div id="tripOverviewContainer">
+                <div id="tripOverviewContainer_imgCont">
+                    <img src="<?php echo $data['coverImg'] ?>" alt="pic" style="width:100%" id="imgCont">
+                </div>
+                <p style="display:none"><?php echo $data['tripID'] ?></p>
+                <h3 style="text-align:center;" id="lblLocation"><b><?php echo $data['location'] ?></b></h3>
+                <div id="lblTravelDates_Container">
+                    <h3><b><?php echo $data['dateStart'] ?></b>
+                    </h3>
+                    <h3 style="margin-left: 30px;margin-right: 30px">to</h3>
+                    <h3> <?php echo $data['dateEnd'] ?></h3>
+                </div>
+                <p id="lblDesc">
+                    <?php echo $data['description'] ?>
+                </p>
             </div>
-        </div>
+        </center>
         <center>
             <div id="dividerLine"></div>
         </center>
