@@ -122,6 +122,10 @@ $conn = mysqli_connect($servername, $username, $password, $database);
                 document.location.href = 'http://localhost/Travelogger/FrontEnds/addPost.php'
         }
 
+        document.getElementById("lblViewMoreMemories").onclick =function(){
+            document.location.href = 'http://localhost/Travelogger/FrontEnds/allMemories.php'
+        }
+
     </script>
 </body>
 

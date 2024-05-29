@@ -19,14 +19,13 @@ if ($conn) {
             echo '</script>';
         } else {
             $sql = "INSERT INTO `tbltrips` ( `location`,  
-                `description`, `dateStart`, `dateEnd`, `user`) VALUES ('$location',  
-                '$desc', '$startDate', '$endDate', '$user')";
+                `description`, `dateStart`, `dateEnd`, `user`, `coverImg`) VALUES ('$location',  
+                '$desc', '$startDate', '$endDate', '$user', '../Images/noPhotoPost.jpeg')";
             $result = mysqli_query($conn, $sql);
             if ($result) {
                 echo '<script language="javascript">';
-                echo 'alert("Memory Added successfully!")';
+                echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/mainPage.php"';
                 echo '</script>';
-                //header('Location: http://localhost/Travelogger/mainPage.php');
             }
         }
     } else {
