@@ -99,7 +99,7 @@ if (isset($_POST['submit'])) {
             $username = $_SESSION['username'];
             $res = mysqli_query($conn, "select * from users where userName = '$username'");
             while ($row = mysqli_fetch_assoc($res)) {
-                ?>
+                ?>  
                 <img src="../<?php echo $row['file'] ?>" alt="" id="divPreviewImg">
             <?php } ?>
         </div>
