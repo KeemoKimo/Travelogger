@@ -8,6 +8,7 @@
 
 body {
     font-family: manrope;
+    background-color: #f2ece5;
 }
 
 #tripOverviewContainer {
@@ -16,12 +17,19 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     border-radius: 15px;
+    background-color: white;
+}
+
+#tripOverviewContainer:hover{
+    cursor: pointer;
+    opacity: 90%;
+    transform: scale(1.05);
+    transition: .8s;
 }
 
 #tripOverviewContainer_imgCont{
     width: 500px;
     height: 570px;
-    background-color: yellow;
     float: left;
     border-radius: 15px 0 0 10px;
 }
@@ -35,7 +43,7 @@ body {
 #lblLocation{
     font-size: 40px;
     padding-top: 60px;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
 }
 
 #lblTravelDates_Container{
@@ -58,6 +66,12 @@ body {
     font-weight: lighter;
 }
 
+#lblTotalTrip{
+    text-align: center;
+    font-size: 22px;
+    font-weight: lighter;
+}
+
 #dividerLine {
     width: 95%;
     height: 1px;
@@ -66,3 +80,4 @@ body {
     margin-top: 60px;
     margin-bottom: 60px;
 }
+

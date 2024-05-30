@@ -21,8 +21,16 @@ include ("../phpOperations/OPEN_CONN.php");
 </head>
 
 <body>
-    <h1>Hello <?php echo $_SESSION['userEmail'] ?></h1>
-    <h1 style="text-align: center;font-size: 40px;"> ALL TRIP MEMORIES </h1>
+    <h1 style="text-align: center;font-size: 40px;margin-top: 60px;"> ALL TRIP MEMORIES </h1>
+    <center>
+        <div id="dividerLine"></div>
+    </center>
+    <?php 
+        $userEmail = $_SESSION['userEmail'];
+        $sql = mysqli_query($conn, "select * from tbltrips where user = '$userEmail' order by dateEnd desc");
+        $num = mysqli_num_rows($sql);
+        echo "<h3 id='lblTotalTrip'>Your total amount of trip : <b> $num </b> </h3>";
+    ?>
     <center>
         <div id="dividerLine"></div>
     </center>
