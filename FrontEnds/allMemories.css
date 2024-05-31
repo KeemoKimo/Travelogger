@@ -11,65 +11,80 @@ body {
     background-color: #f2ece5;
 }
 
-.tripOverviewContainer {
+#aFull {
+    display: block;
     width: 90%;
     height: 570px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
+    border-radius: 15px;
+    text-align: center;
+    border-radius: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+#aFull:hover{
+    cursor: pointer;
+    opacity: 90%;
+    transform: scale(1.03);
+    transition: .8s;
+}
+
+.insideContainer{
+    width: 100%;
+    height: 100%;
     border-radius: 15px;
     background-color: white;
 }
 
-.tripOverviewContainer:hover{
-    cursor: pointer;
-    opacity: 90%;
-    transform: scale(1.05);
-    transition: .8s;
-}
-
-#tripOverviewContainer_imgCont{
+.insideContainer_imgCont {
     width: 500px;
     height: 570px;
     float: left;
-    border-radius: 15px 0 0 10px;
+    border-radius: 15px 0 0 15px;
 }
 
-#tripOverviewContainer_imgCont img{
+.insideContainer_imgCont img {
     height: 570px;
     object-fit: cover;
-    border-radius: 15px 0 0 10px;
+    border-radius: 15px 0 0 15px;
 }
 
-#lblLocation{
-    font-size: 40px;
-    padding-top: 60px;
+#lblLocation {
+    font-size: 36px;
+    padding-top: 50px;
     letter-spacing: 3px;
+    margin-bottom: 10px;
 }
 
-#lblTravelDates_Container{
+#lblTravelDates_Container {
     width: 360px;
     display: flex;
     text-align: center;
-    margin-top: -30px;
     font-size: 20px;
+    margin: 0 auto;
+    padding-top: -10px;
 }
 
-#lblDesc{
+#lblDesc {
     /* background-color: red; */
-    margin-top: 7px;
     height: 300px;
-    font-size: 24px;
+    font-size: 18px;
     overflow: hidden;
     padding-left: 100px;
     padding-right: 100px;
     line-height: 50px;
     font-weight: lighter;
+    text-decoration: none;
+
 }
 
-#lblTotalTrip{
+#lblTotalTrip {
     text-align: center;
     font-size: 22px;
     font-weight: lighter;
+    margin-top: 50px;
 }
 
 #dividerLine {
@@ -78,6 +93,4 @@ body {
     border-radius: 10px;
     background-color: black;
     margin-top: 60px;
-    margin-bottom: 60px;
 }
-
