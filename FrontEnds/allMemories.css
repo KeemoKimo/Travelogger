@@ -11,7 +11,7 @@ body {
     background-color: #f2ece5;
 }
 
-#tripOverviewContainer {
+.tripOverviewContainer {
     width: 90%;
     height: 570px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -20,7 +20,7 @@ body {
     background-color: white;
 }
 
-#tripOverviewContainer:hover{
+.tripOverviewContainer:hover{
     cursor: pointer;
     opacity: 90%;
     transform: scale(1.05);
