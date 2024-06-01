@@ -17,7 +17,6 @@ if ($conn) {
         if ($num == 0) {
             echo '<script language="javascript">';
             echo 'alert("This user does not exist!")';
-            //echo 'window.location.reload()';
             echo '</script>';
             echo '<script language="javascript">';
             echo 'document.location.href = "http://localhost/Travelogger/credential.php"';
@@ -37,6 +36,8 @@ if ($conn) {
             } else {
                 echo '<script language="javascript">';
                 echo 'alert("The information you entered is wrong!")';
+                echo '</script>';
+                echo '<script language="javascript">';
                 echo 'document.location.href = "http://localhost/Travelogger/credential.php"';
                 echo '</script>';
             }

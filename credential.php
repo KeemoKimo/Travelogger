@@ -1,7 +1,7 @@
 <html lang="en">
 
-<?php 
-    session_start();
+<?php
+session_start();
 ?>
 
 <head>
@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <title>Log In</title>
 </head>
+
 <body>
     <div class="loginForm" style="display: block;">
         <form action="phpOperations\credentials\login.php" method="post">
@@ -36,17 +37,18 @@
                 <p style="float: right; margin-top: 50px;color: blue;" id="lblRegisterNow">Register now</p>
             </div>
         </form>
-     </div>
-     <div class="regForm" style="display: none;">
+    </div>
+    <div class="regForm" style="display: none;">
         <form action="phpOperations\credentials\signUp.php" method="post">
             <h1 style="text-align: center; padding-top: 60px;">Create an Account</h1>
             <div style="margin-top: 60px;">
-                <input type="text" id="reg_txtUsername" name = "reg_txtUsername" placeholder="Create your username...">
+                <input type="text" id="reg_txtUsername" name="reg_txtUsername" placeholder="Create your username...">
                 <br>
                 <input type="text" id="reg_txtEmail" name="reg_txtEmail" placeholder="Enter your email...">
                 <div style="margin-top: 24px; width: 400px;display:flex;">
                     <div style="float: left; margin-left: 100px;">
-                        <input type="password" id="reg_txtPassword" name="reg_txtPassword" placeholder="Choose Password...">
+                        <input type="password" id="reg_txtPassword" name="reg_txtPassword"
+                            placeholder="Choose Password...">
                     </div>
                     <div style="padding-top: 9px;" id="reg_imgEye">
                         <img src="eye.png" width="100%" height="100%" style="margin-left: 15px;" id="reg_imgEyeContent">
@@ -63,7 +65,7 @@
                 <p style="float: right; margin-top: 15px;color: blue;" id="lblSignIn">Log In</p>
             </div>
         </form>
-     </div>
+    </div>
     <script src="JS\login_page.js"></script>
 </body>
 
