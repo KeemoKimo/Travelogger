@@ -26,14 +26,31 @@ if(isset($_GET['id'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="memoryOverview.css?v=<?php echo time(); ?>">
+    <title>Trip View</title>
 </head>
 <body>
-    Trip ID :  <?php echo $tripID?><br>
-    Location : <?php echo $location?> <br>
-    Start Date : <?php echo $dateStart ?><br>
-    End Date : <?php echo $dateEnd ?><br>
-    Description : <?php echo $description ?><br>
-    Cover Image : <br><img src="<?php echo $coverImg?>" alt=""><br>
+    
+    <h1 id="lblLocation">Trip to <?php echo $location ?></h1>
+    <div class="containerDate">
+        <div class="containerDate_element">
+            <h1><?php echo $dateStart ?></h1>
+            <h1 style="margin-left:40px;margin-right: 40px">to</h1>
+            <h1><?php echo $dateEnd ?></h1>
+        </div>
+    </div>
+    <div style="margin-top: 50px;"></div>
+    <div id="coverImgDiv">
+        <img src="<?php echo $coverImg ?>" alt="">
+    </div>
+    <div style="margin-top: 100px;"></div>
+    <div class="descContainer">
+        <p><?php echo $description ?></p>
+    </div>
 </body>
+<script>
+    document.getElementById("coverImgDiv").onclick = function(){
+        document.location.href = "editCoverImg.php?id=<?php echo $tripID ?>"
+    }
+</script>
 </html>

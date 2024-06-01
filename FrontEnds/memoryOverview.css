@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+.manrope-mainfont {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+body {
+    font-family: manrope;
+    background-color: #f2ece5;
+}
+
+#lblLocation{
+    text-align: center;
+    margin-top: 100px;
+    font-size: 45px;
+}
+
+.containerDate{
+    text-align: center;
+}
+
+.containerDate h1{
+    font-weight: lighter;
+}
+
+.containerDate_element{
+    display: flex;
+    width: 455px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+#coverImgDiv{
+    width: 1400px;
+    height: 800px;
+    border-radius: 15px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#coverImgDiv:hover{
+    cursor: pointer;
+    opacity: 90%;
+    transform: scale(1.01);
+    transition: .5s;
+}
+
+#coverImgDiv img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.descContainer{
+    width: 75%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+    margin: 0 auto;
+    padding: 30px 70px 30px 70px;
+}
+
+.descContainer p{
+    font-size: 26px;
+    line-height: 2.5;
+    font-weight: lighter;
+}
