@@ -18,12 +18,12 @@
             <div style="margin-top: 60px;">
                 <input type="text" id="txtUsername" name="txtUsername" placeholder="Username...">
                 <br>
-                <div style="margin-top: 50px; width: 400px;">
+                <div style="margin-top: 50px; width: 400px;display:flex;">
                     <div style="float: left; margin-left: 100px;">
                         <input type="password" id="txtPassword" name="txtPassword" placeholder="Password...">
                     </div>
                     <div style="padding-top: 9px;" id="imgEye">
-                        <img src="Images\eye.png" width="30px" height="30px" style="margin-left: 15px;" id="imgEyeContent">
+                        <img src="eye.png" width="100%" height="100%" style="margin-left: 15px;" id="imgEyeContent">
                     </div>
                 </div>
             </div>
@@ -44,16 +44,16 @@
                 <input type="text" id="reg_txtUsername" name = "reg_txtUsername" placeholder="Create your username...">
                 <br>
                 <input type="text" id="reg_txtEmail" name="reg_txtEmail" placeholder="Enter your email...">
-                <div style="margin-top: 24px; width: 400px;">
+                <div style="margin-top: 24px; width: 400px;display:flex;">
                     <div style="float: left; margin-left: 100px;">
                         <input type="password" id="reg_txtPassword" name="reg_txtPassword" placeholder="Choose Password...">
                     </div>
                     <div style="padding-top: 9px;" id="reg_imgEye">
-                        <img src="Images\eye.png" width="30px" height="30px" style="margin-left: 15px;" id="reg_imgEyeContent">
+                        <img src="eye.png" width="100%" height="100%" style="margin-left: 15px;" id="reg_imgEyeContent">
                     </div>
                 </div>
             </div>
-            <div style="margin-top: 70px; text-align: center;">
+            <div style="margin-top: 50px; text-align: center;">
                 <button type="submit" id="btnCreate">Create Account</button>
             </div>
             <p style="font-size: 13px; text-align: center;">*Succesful sign up will redirect back to Sign In page*</p>

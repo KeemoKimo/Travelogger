@@ -18,7 +18,8 @@ if($conn){
         if($num == 0){
             if($username == "" || $userEmail == "" || $userPass == ""){
                 echo '<script language="javascript">';
-                echo 'alert("Please enter all the fields!")';
+                echo 'document.location.href = "http://localhost/Travelogger/credential.php"'; 
+                // echo 'alert("Please enter all the fields!")';
                 echo '</script>';
             }else{
                 $sql = "INSERT INTO `users` ( `userName`,  

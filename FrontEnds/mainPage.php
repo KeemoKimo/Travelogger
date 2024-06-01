@@ -42,55 +42,48 @@ $conn = mysqli_connect($servername, $username, $password, $database);
         </div>
     </div>
 
-    <div style="width:80%;height: 2px;background-color: black;margin-top: 50px;margin-left: 100px;padding-right: 100px">
+    <div id="lineDivider">
     </div>
     <h1 id="lblYourLatestTravel">Your Travel <b>Highlights</b></h1>
 
-    <div style="display:flex;margin-top: 70px;">
-        <div class="card">
-            <img src="../Images/greece1.jpeg" alt="pic" style="width:100%">
-            <div class="container">
-                <h3 style="text-align:center;"><b>Santorini, Greece</b></h3>
-                <h4 style="text-align:center;"><b>14 July 2022</b></h4>
-                <p style="text-align:center;">a beautiful visit to islands</p>
-            </div>
-        </div>
+    <center>
+        <div style="display:flex;margin-top: 70px;" class="divContainer">
+            <?php
+            $userEmail = $_SESSION['userEmail'];
+            $sql = mysqli_query($conn, "select * from tbltrips where user = '$userEmail' order by dateEnd desc LIMIT 4");
+            $num = mysqli_num_rows($sql);
+            if ($num > 0) {
+                while ($result = mysqli_fetch_array($sql)) {
+                    echo '<center>
+                                <a href="memoryOverview.php?id=' . $result["tripID"] . '" id="aSmall">
+                                    <div class="insideContainer"> 
+                                        <div class="insideContainer_imgCont">   
+                                            <img src="' . $result['coverImg'] . '" width="100%">
+                                        </div>   
+                                        <h3 style="text-align:center;" id="lblLocation"><b>' . $result['location'] . '</b></h3>
+                                        <p id="lblDesc">
+                                            ' . $result['description'] . '
+                                        </p>
+                                    </div>
+                                </a>
+                        </center>
+                        <center>
+                            <div id="dividerLine"></div>
+                        </center>';
+                    echo "</br>";
 
-        <div class="card2">
-            <img src="../Images/thai1.jpg" alt="pic" style="width:100%">
-            <div class="container">
-                <h3 style="text-align:center;"><b>Bangkok, Thailand</b></h3>
-                <h4 style="text-align:center;"><b>29 Oct 2024</b></h4>
-                <p style="text-align:center;">a visit to bangkok, thailand</p>
-            </div>
+                }
+            }
+            ?>
         </div>
-
-        <div class="card3">
-            <img src="../Images/cam1.jpg" alt="pic" style="width:100%">
-            <div class="container">
-                <h3 style="text-align:center;"><b>Preah Vihear, Cambodia</b></h3>
-                <h4 style="text-align:center;"><b>31 December 2023</b></h4>
-                <p style="text-align:center;">a visit to the mountains</p>
-            </div>
-        </div>
-
-        <div class="card4">
-            <img src="../Images/china1.jpg" alt="pic" style="width:100%">
-            <div class="container">
-                <h3 style="text-align:center;"><b>Beijing, China</b></h3>
-                <h4 style="text-align:center;"><b>27 April 2019</b></h4>
-                <p style="text-align:center;">lovely temple visits</p>
-            </div>
-        </div>
-    </div>  
-
+    </center>
     <div id="lblHightlight_container">
-        <h2 id="lblViewMoreMemories"><b> < </b> view all your memories</h2>
+        <h2 id="lblViewMoreMemories"><b>
+                < </b> view all your memories</h2>
         <h2 id="lblAddMemories">add a new memory<b> > </b></h2>
     </div>
 
-    <div style="width:80%;height: 2px;background-color: black;margin-top: 50px;margin-left: 100px;padding-right: 100px">
-    </div>
+    <div id="lineDivider"></div>
 
     <script>
         var pfpVar = 0
@@ -118,11 +111,11 @@ $conn = mysqli_connect($servername, $username, $password, $database);
             }
         }
 
-        document.getElementById("lblAddMemories").onclick =function(){
-                document.location.href = 'http://localhost/Travelogger/FrontEnds/addPost.php'
+        document.getElementById("lblAddMemories").onclick = function () {
+            document.location.href = 'http://localhost/Travelogger/FrontEnds/addPost.php'
         }
 
-        document.getElementById("lblViewMoreMemories").onclick =function(){
+        document.getElementById("lblViewMoreMemories").onclick = function () {
             document.location.href = 'http://localhost/Travelogger/FrontEnds/allMemories.php'
         }
 

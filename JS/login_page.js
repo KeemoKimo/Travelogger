@@ -13,20 +13,20 @@ var loginForm = document.getElementsByClassName("loginForm")[0]
 var regForm = document.getElementsByClassName("regForm")[0]
 imgEye.onclick = function(){
     if(txtPass.type == "password"){
-        imgEye.src = "file:///C:/xampp/htdocs/Travelogger/Images/EyeClose.png"
+        imgEye.src = "EyeClose.png"
         txtPass.type = "text"
     }else{
-        imgEye.src = "file:///C:/xampp/htdocs/Travelogger/Images/eye.png"
+        imgEye.src = "eye.png"
         txtPass.type = "password"
     }
 }
 
 reg_imgEye.onclick = function(){
     if(reg_txtPass.type == "password"){
-        reg_imgEye.src = "file:///C:/xampp/htdocs/Travelogger/Images/EyeClose.png"
+        reg_imgEye.src = "EyeClose.png"
         reg_txtPass.type = "text"
     }else{
-        reg_imgEye.src = "file:///C:/xampp/htdocs/Travelogger/Images/eye.png"
+        reg_imgEye.src = "eye.png"
         reg_txtPass.type = "password"
     }
 }
