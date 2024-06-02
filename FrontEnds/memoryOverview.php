@@ -43,19 +43,39 @@ if (isset($_GET['id'])) {
             echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/mainPage.php"';
             echo '</script>';
         }
-    }else if(isset($_POST['btnUpdateDesc'])){
+    } else if (isset($_POST['btnUpdateDesc'])) {
         $newDesc = $_POST['txtNewDesc'];
         $query = mysqli_query($conn, "UPDATE tbltrips SET description = '$newDesc' WHERE tripID = '$tripID'");
-        if($query){
+        if ($query) {
             echo '<script language="javascript">';
             echo 'alert("Description Updated successfully!")';
             echo '</script>';
             echo '<script language="javascript">';
             echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/mainPage.php"';
             echo '</script>';
-        }else {
+        } else {
             echo '<script language="javascript">';
             echo 'alert("Description Updated Failed!")';
+            echo '</script>';
+            echo '<script language="javascript">';
+            echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/mainPage.php"';
+            echo '</script>';
+        }
+    } else if (isset($_POST['btnUpdateDate'])) {
+        $newStartDate = $_POST['dateStart'];
+        $newEndDate = $_POST['dateEnd'];
+        $query = mysqli_query($conn, "UPDATE tbltrips SET 
+        dateStart = '$newStartDate', dateEnd = '$newEndDate' WHERE tripID = '$tripID'");
+        if ($query) {
+            echo '<script language="javascript">';
+            echo 'alert("Travel Date Updated successfully!")';
+            echo '</script>';
+            echo '<script language="javascript">';
+            echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/mainPage.php"';
+            echo '</script>';
+        } else {
+            echo '<script language="javascript">';
+            echo 'alert("Travel Date Updated Failed!")';
             echo '</script>';
             echo '<script language="javascript">';
             echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/mainPage.php"';
@@ -82,6 +102,7 @@ if (isset($_GET['id'])) {
             <h1><?php echo $dateStart ?></h1>
             <h1 style="margin-left:40px;margin-right: 40px">to</h1>
             <h1><?php echo $dateEnd ?></h1>
+            <img src="../Images/editImage.png" alt="" id="editDate">
         </div>
     </div>
 
@@ -126,6 +147,27 @@ if (isset($_GET['id'])) {
             </form>
         </div>
     </div>
+
+    <center>
+        <div id="editTravelDates">
+            <div id="editTravelDates_content">
+                <h1 style="text-align : center;padding-top: 50px;padding-bottom: 20px;">Edit Travel Dates</h1>
+                <form method="POST">
+                    <center>
+                        <div id="editTravelDates_content_dates">
+                            <h2>Start Date</h2>
+                            <input type="date" name="dateStart" id="dateStart" value="<?php echo $dateStart ?>">
+                            <h2 style="padding-top:20px;">End Date</h2>
+                            <input type="date" name="dateEnd" id="dateEnd" value="<?php echo $dateEnd ?>">
+                        </div>
+                        <div id="btnUpdateDate_container">
+                            <button type="submit" id="btnUpdateDate" name="btnUpdateDate">Update</button>
+                        </div>
+                    </center>
+                </form>
+            </div>
+        </div>
+    </center>
 </body>
 <script>
 
@@ -151,9 +193,16 @@ if (isset($_GET['id'])) {
         document.getElementById("editPopUp").style.display = "block"
     }
 
+    document.getElementById("editDate").onclick =function(){
+        document.getElementById("editTravelDates").style.display = "block"
+    }
+
     window.onclick = function (event) {
         if (event.target == document.getElementById("editPopUp")) {
             document.getElementById("editPopUp").style.display = "none"
+        }
+        else if (event.target == document.getElementById("editTravelDates")) {
+            document.getElementById("editTravelDates").style.display = "none"
         }
     }
 </script>
