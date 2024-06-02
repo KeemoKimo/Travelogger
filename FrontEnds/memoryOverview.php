@@ -43,6 +43,24 @@ if (isset($_GET['id'])) {
             echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/mainPage.php"';
             echo '</script>';
         }
+    }else if(isset($_POST['btnUpdateDesc'])){
+        $newDesc = $_POST['txtNewDesc'];
+        $query = mysqli_query($conn, "UPDATE tbltrips SET description = '$newDesc' WHERE tripID = '$tripID'");
+        if($query){
+            echo '<script language="javascript">';
+            echo 'alert("Description Updated successfully!")';
+            echo '</script>';
+            echo '<script language="javascript">';
+            echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/mainPage.php"';
+            echo '</script>';
+        }else {
+            echo '<script language="javascript">';
+            echo 'alert("Description Updated Failed!")';
+            echo '</script>';
+            echo '<script language="javascript">';
+            echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/mainPage.php"';
+            echo '</script>';
+        }
     }
 }
 ?>
@@ -58,7 +76,7 @@ if (isset($_GET['id'])) {
 
 <body>
 
-    <h1 id="lblLocation">Trip to <?php echo $location ?></h1>
+    <h1 id="lblLocation">your trip to <b><?php echo $location ?></b></h1>
     <div class="containerDate">
         <div class="containerDate_element">
             <h1><?php echo $dateStart ?></h1>
@@ -84,10 +102,30 @@ if (isset($_GET['id'])) {
         </form>
     </div>
     <div style="margin-top: 60px;"></div>
-    <div class="descContainer">
+    <div id="descContainer">
         <p><?php echo $description ?></p>
+        <div style="margin-top: 50px;"></div>
+        <div class="editDescCont">
+            <img src="../Images/editImage.png" alt="" width="40px" height="40px">
+            <h2>Edit Description</h2>
+        </div>
     </div>
 
+    <div id="editPopUp">
+        <div id="editPopUp_content">
+            <h1 style="text-align : center;padding-top: 50px">Edit Description</h1>
+            <form method="POST">
+                <center>
+                    <textarea name="txtNewDesc" id="txtNewDesc">
+                    <?php echo $description ?>
+                </textarea>
+                    <div id="btnUpdate_container">
+                        <button type="submit" id="btnUpdateDesc" name="btnUpdateDesc">Update</button>
+                    </div>
+                </center>
+            </form>
+        </div>
+    </div>
 </body>
 <script>
 
@@ -107,6 +145,16 @@ if (isset($_GET['id'])) {
 
     document.getElementById("coverImgDiv").onclick = function () {
         document.getElementById("custom-file-upload").style.display = "block"
+    }
+
+    document.getElementById("descContainer").onclick = function () {
+        document.getElementById("editPopUp").style.display = "block"
+    }
+
+    window.onclick = function (event) {
+        if (event.target == document.getElementById("editPopUp")) {
+            document.getElementById("editPopUp").style.display = "none"
+        }
     }
 </script>
 
