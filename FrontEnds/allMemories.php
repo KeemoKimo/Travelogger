@@ -40,8 +40,6 @@ include ("../phpOperations/OPEN_CONN.php");
     $num = mysqli_num_rows($sql);
     if ($num > 0) {
         while ($result = mysqli_fetch_array($sql)) {
-            //echo "hello " . $result["location"] . " , " . $result['tripID'];
-            //echo "<a href='memoryOverview.php?id=" . $result['tripID'] . "' id='aFull'>No</a>";
             echo '<center>
                     <a href="memoryOverview.php?id=' . $result["tripID"] . '" id="aFull">
                         <div class="insideContainer"> 
@@ -72,12 +70,4 @@ include ("../phpOperations/OPEN_CONN.php");
     }
     ?>
 </body>
-
-<!-- <script>
-    document.getElementById("tripOverviewContainer").onclick =function(){
-
-    }
-    document.getElementsByClassName
-</script> -->
-
 </html>
