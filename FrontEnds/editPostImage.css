@@ -10,3 +10,100 @@ body {
     font-family: manrope;
     background-color: #f2ece5;
 }
+
+#imgDisplay{
+    width: 1500px;
+    height: 950px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    margin-top: 10px;
+}
+
+#container_editDesc{
+    width: 1500px;
+    height: 100px;
+    margin-top: 50px;
+    display: flex;
+}
+
+#txtDesc{
+    width: 80%;
+    height: 80px;
+    border: none;
+    font-size: 21px;
+    font-family: manrope;
+    padding: 20px;
+    border-radius: 15px 0 0 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#btnUpdate{
+    width: 20%;
+    height: 80px;
+    background-color: green;
+    color: white;
+    border: 0;
+    font-family: manrope;
+    font-size: 26px;
+    border-radius: 0 15px 15px 0;
+}
+
+#btnUpdate:hover{
+    cursor: pointer;
+    opacity: 0.7;
+    transition: .8s;
+}
+
+#container_editDate{
+    width: 30%;
+    height: 80px;
+    display: flex;
+}
+
+#container_editDate input{
+    border: none;
+    width: 60%;
+    height: 80px;
+    border-radius: 15px 0 0 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    font-size: 26px;
+    padding: 20px;
+}
+
+#container_editDate button{
+    width: 40%;
+    height: 80px;
+    border-radius: 0 15px 15px 0;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    font-size: 26px;
+    font-family: manrope;
+    background-color: green;
+    color: white;
+}
+
+#container_editDate button:hover{
+    cursor: pointer;
+    opacity: 0.7;
+    transition: .8s;
+}
+
+#btnDelete{
+    margin-top: 50px;
+    width: 300px;
+    height: 80px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    background-color: red;
+    font-family: manrope;
+    font-size: 24px;
+}
+
+#btnDelete:hover{
+    background-color: rgb(130, 3, 3);
+    cursor: pointer;
+    opacity: 0.7;
+    transition: .8s;
+}
