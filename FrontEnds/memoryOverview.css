@@ -33,14 +33,14 @@ body {
     padding-top: 10px;
 }
 
-#editDate{
+#editDate {
     width: 40px;
     height: 40px;
     margin-left: 20px;
     margin-top: 22.5px;
 }
 
-#editDate:hover{
+#editDate:hover {
     cursor: pointer;
     opacity: 70%;
     transform: scale(1.03);
@@ -135,7 +135,7 @@ body {
     font-weight: lighter;
 }
 
-.editDescCont {
+#editDescCont {
     background-color: whitesmoke;
     display: flex;
     width: 330px;
@@ -146,7 +146,7 @@ body {
     margin: 0 auto;
 }
 
-.editDescCont:hover {
+#editDescCont:hover {
     cursor: pointer;
     opacity: 80%;
     transform: scale(1.02);
@@ -154,13 +154,13 @@ body {
     background-color: rgb(131, 240, 131);
 }
 
-.editDescCont img {
+#editDescCont img {
     margin-left: 46px;
     margin-top: 17px;
     user-select: none;
 }
 
-.editDescCont h2 {
+#editDescCont h2 {
     font-weight: 400;
     margin-left: 10px;
     user-select: none;
@@ -275,10 +275,192 @@ body {
     color: white;
 }
 
-#btnUpdateDate:hover{
+#btnUpdateDate:hover {
     background-color: green;
     cursor: pointer;
     opacity: 80%;
     transform: scale(1.02);
     transition: .8s;
+}
+
+#lblImages {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 40px;
+    letter-spacing: 8;
+}
+
+#uploadImageEmptyDiv {
+    width: 35%;
+    height: 150px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+    margin: 0 auto;
+    display: flex;
+}
+
+#uploadImageEmptyDiv:hover {
+    cursor: pointer;
+    opacity: 80%;
+    transform: scale(1.02);
+    transition: .8s;
+}
+
+#imgUpload {
+    width: 80px;
+    height: 80px;
+    margin-right: 30px;
+    margin-left: 20%;
+    margin-top: 40px;
+}
+
+#addNewImgForm {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(20, 18, 18, 0.4);
+    /* Black w/ opacity */
+}
+
+#addNewImgForm_content {
+    width: 800px;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 1%;
+    background-color: white;
+    padding: 30px;
+}
+
+#newImagePic {
+    width: 700px;
+    height: 500px;
+    object-fit: cover;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    /* display: none; */
+}
+
+.newPicFileUpload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: yellow;
+    color: black;
+    border-radius: 15px;
+    font-size: 18px;
+    padding: 10px 40px 10px 40px;
+    margin-top: 30px;
+}
+
+#txtDesc_newImg {
+    width: 500px;
+    padding: 15px;
+    font-family: manrope;
+    font-size: 19px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: none;
+    margin-top: 20px;
+}
+
+#pickDate{
+    width: 250px;
+    height: 50px;
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#toHideElement{
+    display: none;
+}
+
+#btnAddImage{
+    display: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border-radius: 15px;
+    font-size: 18px;
+    padding: 10px 40px 10px 40px;
+    margin-top: 30px;
+    border: none;
+}
+
+#addNewImgForm_content_frm input{
+    display: none;
+}
+
+#aFull{
+    text-decoration: none;
+}
+
+.insideContainer{
+    width: 60%;
+    height: 350px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    background-color: white;
+}
+
+.insideContainer:hover{
+    cursor: pointer;
+    opacity: 80%;
+    transform: scale(1.02);
+    transition: .8s;
+}
+
+.insideContainer_imgCont {
+    width: 50%;
+    height: 350px;
+    float: left;
+    border-radius: 15px 0 0 15px;
+}
+
+.insideContainer_imgCont img {
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px 0 0 15px;
+}
+
+#lblImages_Date{
+    margin-top: 70px;
+    color: black;
+}
+
+.insideContainer_details{
+    width: 50%;
+    border-radius: 0 15px 15px 0;
+    float: right;
+}
+
+.insideContainer_details_containerP{
+    width: 80%;
+    height: 200px;
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    overflow: hidden;
+}
+
+.insideContainer_details_containerP p{
+    padding-top: 50px;
 }

@@ -20,6 +20,8 @@ if (isset($_GET['id'])) {
     $dateEnd = $tempDateEnd[0];
     $coverImg = $tempCoverImg[0];
 
+
+
     if (isset($_POST['submit'])) {
 
         $file_name = $_FILES['image']['name'];
@@ -81,6 +83,46 @@ if (isset($_GET['id'])) {
             echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/mainPage.php"';
             echo '</script>';
         }
+    } else if (isset($_POST['btnAddImage'])) {
+        $imageDesc = $_POST['txtDesc_newImg'];
+        $file_name = $_FILES['newPic_file']['name'];
+        $temp_name = $_FILES['newPic_file']['tmp_name'];
+        $folder = '../uploads/' . $file_name;
+        $imgDate = $_POST['pickDate'];
+
+        $sqlCount = mysqli_query($conn, "SELECT * FROM tripimagesdesc WHERE tripID = '$tripID'");
+        $sqlCount_num = mysqli_num_rows($sqlCount);
+
+        if ($sqlCount_num <= 20) {
+            $sql = "INSERT INTO `tripimagesdesc` ( `tripID`,  
+            `imageName`, `imgDate`, `imgDesc`) VALUES ('$tripID',  
+            'uploads/$file_name', '$imgDate', '$imageDesc')";
+            $result = mysqli_query($conn, $sql);
+
+            if (move_uploaded_file($temp_name, $folder)) {
+                echo '<script language="javascript">';
+                echo 'alert("Image Added Successfully!")';
+                echo '</script>';
+                echo '<script language="javascript">';
+                echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/allMemories.php"';
+                echo '</script>';
+            } else {
+                echo '<script language="javascript">';
+                echo 'alert("Image Added Failed!")';
+                echo '</script>';
+                echo '<script language="javascript">';
+                echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/allMemories.php"';
+                echo '</script>';
+            }
+        } else {
+            echo '<script language="javascript">';
+            echo 'alert("You already have the max amount of image added!")';
+            echo '</script>';
+            echo '<script language="javascript">';
+            echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/allMemories.php"';
+            echo '</script>';
+        }
+
     }
 }
 ?>
@@ -126,7 +168,7 @@ if (isset($_GET['id'])) {
     <div id="descContainer">
         <p><?php echo $description ?></p>
         <div style="margin-top: 50px;"></div>
-        <div class="editDescCont">
+        <div id="editDescCont">
             <img src="../Images/editImage.png" alt="" width="40px" height="40px">
             <h2>Edit Description</h2>
         </div>
@@ -168,13 +210,83 @@ if (isset($_GET['id'])) {
             </div>
         </div>
     </center>
+
+    <center>
+        <div id="addNewImgForm">
+            <div id="addNewImgForm_content">
+                <form method="POST" id="addNewImgForm_content_frm" enctype="multipart/form-data">
+                    <center>
+                        <div id="toHideElement">
+                            <img src="../Images/emptyImage.jpg" alt="" id="newImagePic">
+                            <h2 style="font-weight: lighter">Date</h2>
+                            <input type="date" alt="" id="pickDate" name="pickDate" required>
+                            <br>
+                            <input type="text" id="txtDesc_newImg" name="txtDesc_newImg"
+                                placeholder="Enter a brief description" required>
+                        </div>
+                        <label for="newImg_upload" class="newPicFileUpload">
+                            Select Image
+                        </label>
+                        <input type="file" name="newPic_file" id="newImg_upload" accept="image/*" />
+                        <br>
+                        <button type="submit" id="btnAddImage" name="btnAddImage">Submit</button>
+                    </center>
+                </form>
+            </div>
+        </div>
+    </center>
+
+    <div style="margin-top: 100px;"></div>
+    <h1 id="lblImages">Memory <b>Images</b></h1>
+    <div style="margin-top: 100px;"></div>
+
+    <?php
+    $sql = mysqli_query($conn, "select * from tripimagesdesc where tripID = '$tripID' order by imgDate desc");
+    $num = mysqli_num_rows($sql);
+    if ($num > 0) {
+        while ($result = mysqli_fetch_array($sql)) {
+            echo '<center>
+                        <a href="editPostImage.php?id=' . $result["imgID"] . '" id="aFull">
+                            <div class="insideContainer"> 
+                                <div class="insideContainer_imgCont">   
+                                    <img src="../' . $result['imageName'] . '" width="100%">
+                                </div>   
+                                <div class="insideContainer_details">   
+                                    <h2 id="lblImages_Date"><b>' . $result['imgDate'] . '</b>
+                                    </h2>
+                                    <div class="insideContainer_details_containerP">   
+                                        <p id="imageDescription">' . $result["imgDesc"] . '</p>
+                                    </div> 
+                                </div>   
+                            </div>
+                        </a>
+                    </center> 
+                    <div style="margin-top: 40px;"></div>
+                    ';
+            echo "</br>";
+        }
+    }
+    ?>
+
+    <div id="uploadImageEmptyDiv">
+        <img src="../Images/uploadFile.png" alt="" id="imgUpload">
+        <?php
+        $sql = mysqli_query($conn, "SELECT * FROM tripimagesdesc WHERE tripID = '$tripID'");
+        $rowCount = mysqli_num_rows($sql);
+        ?>
+        <h2 style="margin-top: 65px;">Add new Image (<?php echo 20 - $rowCount ?> left)</h2>
+    </div>
+
 </body>
 <script>
 
-    document.getElementById("file-upload").onchange = function () {
-        const [file] = document.getElementById("file-upload").files
-        document.getElementById("btnSubmit").style.display = "inline-block"
-        document.getElementById("mainCoverImg").src = URL.createObjectURL(file)
+    document.getElementById("newImg_upload").onchange = function () {
+        document.getElementById("toHideElement").style.display = "block"
+        document.getElementById("pickDate").style.display = "block"
+        document.getElementById("txtDesc_newImg").style.display = "block"
+        const [file] = document.getElementById("newImg_upload").files
+        document.getElementById("btnAddImage").style.display = "inline-block"
+        document.getElementById("newImagePic").src = URL.createObjectURL(file)
     }
 
     document.getElementById("coverImgDiv").onmouseover = function () {
@@ -189,12 +301,22 @@ if (isset($_GET['id'])) {
         document.getElementById("custom-file-upload").style.display = "block"
     }
 
-    document.getElementById("descContainer").onclick = function () {
+    document.getElementById("editDescCont").onclick = function () {
         document.getElementById("editPopUp").style.display = "block"
     }
 
-    document.getElementById("editDate").onclick =function(){
+    document.getElementById("editDate").onclick = function () {
         document.getElementById("editTravelDates").style.display = "block"
+    }
+
+    document.getElementById("uploadImageEmptyDiv").onclick = function () {
+        document.getElementById("addNewImgForm").style.display = "block"
+    }
+
+    document.getElementById("file-upload").onchange = function () {
+        const [file] = document.getElementById("file-upload").files
+        document.getElementById("btnSubmit").style.display = "inline-block";
+        document.getElementById("imgProfile").src = URL.createObjectURL(file)
     }
 
     window.onclick = function (event) {
@@ -203,6 +325,9 @@ if (isset($_GET['id'])) {
         }
         else if (event.target == document.getElementById("editTravelDates")) {
             document.getElementById("editTravelDates").style.display = "none"
+        }
+        else if (event.target == document.getElementById("addNewImgForm")) {
+            document.getElementById("addNewImgForm").style.display = "none"
         }
     }
 </script>
