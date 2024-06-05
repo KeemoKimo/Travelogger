@@ -114,3 +114,24 @@ body {
     transition: 1s;
     font-weight: bold;
 }
+
+#lblMainPage {
+    font-weight: lighter;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 60px;
+}
+
+#lblMainPage:hover {
+    color: rgb(12, 155, 12);
+    opacity: 70%;
+    transition: 1s;
+    font-weight: bold;
+}
+
+#lblHightlight_container {
+    width: 100%;
+    height: 50px;
+    margin-top: 50px;
+}

@@ -278,6 +278,12 @@ if (isset($_GET['id'])) {
         <h2 style="margin-top: 65px;">Add new Image (<?php echo 20 - $rowCount ?> left)</h2>
     </div>
 
+    <div id="lblHightlight_container">
+        <h2 id="lblViewMoreMemories"><b>
+                < </b> view all your memories</h2>
+        <h2 id="lblMainPage">Home Page<b> > </b></h2>
+    </div>
+
 </body>
 <script>
 
@@ -288,6 +294,14 @@ if (isset($_GET['id'])) {
         const [file] = document.getElementById("newImg_upload").files
         document.getElementById("btnAddImage").style.display = "inline-block"
         document.getElementById("newImagePic").src = URL.createObjectURL(file)
+    }
+
+    document.getElementById("lblMainPage").onclick = function () {
+            document.location.href = 'http://localhost/Travelogger/FrontEnds/mainPage.php'
+    }
+
+    document.getElementById("lblViewMoreMemories").onclick = function () {
+            document.location.href = 'http://localhost/Travelogger/FrontEnds/allMemories.php'
     }
 
     document.getElementById("coverImgDiv").onmouseover = function () {
@@ -319,6 +333,7 @@ if (isset($_GET['id'])) {
         document.getElementById("btnSubmit").style.display = "inline-block";
         document.getElementById("imgProfile").src = URL.createObjectURL(file)
     }
+
 
     window.onclick = function (event) {
         if (event.target == document.getElementById("editPopUp")) {

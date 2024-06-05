@@ -10,7 +10,7 @@ if (isset($_GET['id'])) {
     $description = mysqli_fetch_array($sqlGetDesc)[0];
     $date = mysqli_fetch_array($sqlGetDate)[0];
 
-    if(isset($_POST['btnUpdate'])){
+    if (isset($_POST['btnUpdate'])) {
         $newDesc = $_POST['txtDesc'];
         $query = mysqli_query($conn, "UPDATE tripimagesdesc SET 
         imgDesc = '$newDesc' WHERE imgID = '$imgID'");
@@ -21,7 +21,7 @@ if (isset($_GET['id'])) {
             echo '<script language="javascript">';
             echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/allMemories.php"';
             echo '</script>';
-        }else{
+        } else {
             echo '<script language="javascript">';
             echo 'alert("Description Updated Failed!")';
             echo '</script>';
@@ -29,7 +29,7 @@ if (isset($_GET['id'])) {
             echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/allMemories.php"';
             echo '</script>';
         }
-    }else if(isset($_POST['btnChange'])){
+    } else if (isset($_POST['btnChange'])) {
         $newDate = $_POST['imgDate'];
         $query = mysqli_query($conn, "UPDATE tripimagesdesc SET 
         imgDate = '$newDate' WHERE imgID = '$imgID'");
@@ -40,7 +40,7 @@ if (isset($_GET['id'])) {
             echo '<script language="javascript">';
             echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/allMemories.php"';
             echo '</script>';
-        }else{
+        } else {
             echo '<script language="javascript">';
             echo 'alert("Date Updated Failed!")';
             echo '</script>';
@@ -48,7 +48,7 @@ if (isset($_GET['id'])) {
             echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/allMemories.php"';
             echo '</script>';
         }
-    }else if(isset($_POST['btnDelete'])){
+    } else if (isset($_POST['btnDelete'])) {
         $query = mysqli_query($conn, "DELETE from tripimagesdesc WHERE imgID = '$imgID'");
         if ($query) {
             echo '<script language="javascript">';
@@ -57,7 +57,7 @@ if (isset($_GET['id'])) {
             echo '<script language="javascript">';
             echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/allMemories.php"';
             echo '</script>';
-        }else{
+        } else {
             echo '<script language="javascript">';
             echo 'alert("Image Deleted Failed!")';
             echo '</script>';
@@ -93,6 +93,20 @@ if (isset($_GET['id'])) {
             <button type="submit" id="btnDelete" name="btnDelete">Delete Photo</button>
         </form>
     </center>
+    <div id="lblHightlight_container">
+        <h2 id="lblViewMoreMemories"><b>
+                < </b> view all your memories</h2>
+        <h2 id="lblMainPage">Home Page<b> > </b></h2>
+    </div>
+    <script>
+        document.getElementById("lblMainPage").onclick = function () {
+            document.location.href = 'http://localhost/Travelogger/FrontEnds/mainPage.php'
+        }
+
+        document.getElementById("lblViewMoreMemories").onclick = function () {
+            document.location.href = 'http://localhost/Travelogger/FrontEnds/allMemories.php'
+        }
+    </script>
 </body>
 
 </html>

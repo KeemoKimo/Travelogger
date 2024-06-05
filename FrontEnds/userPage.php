@@ -92,6 +92,11 @@ if (isset($_POST['submit'])) {
         </form>
     </div>
 
+    <div id="lblHightlight_container">
+        <h2 id="lblViewMoreMemories"><b>
+                < </b> view all your memories</h2>
+        <h2 id="lblMainPage">Home Page<b> > </b></h2>
+    </div>
 
     <div id="previewPopUp">
         <div id="previewContent">
@@ -99,7 +104,7 @@ if (isset($_POST['submit'])) {
             $username = $_SESSION['username'];
             $res = mysqli_query($conn, "select * from users where userName = '$username'");
             while ($row = mysqli_fetch_assoc($res)) {
-                ?>  
+                ?>
                 <img src="../<?php echo $row['file'] ?>" alt="" id="divPreviewImg">
             <?php } ?>
         </div>
@@ -136,6 +141,14 @@ if (isset($_POST['submit'])) {
 
         document.getElementById("txtChangeName").onkeypress = function () {
             document.getElementById("btnUpdate").style.display = "inline-block"
+        }
+
+        document.getElementById("lblMainPage").onclick = function () {
+            document.location.href = 'http://localhost/Travelogger/FrontEnds/mainPage.php'
+        }
+
+        document.getElementById("lblViewMoreMemories").onclick = function () {
+            document.location.href = 'http://localhost/Travelogger/FrontEnds/allMemories.php'
         }
 
         window.onclick = function (event) {

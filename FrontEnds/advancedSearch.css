@@ -159,3 +159,41 @@ body {
 #sortEarliestStartDate{
     margin-left: 30px;
 }
+
+#lblViewMoreMemories {
+    font-weight: lighter;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    margin-left: 70px;
+    font-size: 20px;
+}
+
+#lblViewMoreMemories:hover {
+    color: rgb(0, 89, 255);
+    opacity: 70%;
+    transition: 1s;
+    font-weight: bold;
+}
+
+#lblMainPage {
+    font-weight: lighter;
+    text-align: center;
+    cursor: pointer;
+    float: right;
+    margin-right: 120px;
+    font-size: 20px;
+}
+
+#lblMainPage:hover {
+    color: rgb(12, 155, 12);
+    opacity: 70%;
+    transition: 1s;
+    font-weight: bold;
+}
+
+#lblHightlight_container {
+    width: 100%;
+    height: 50px;
+    margin-top: 50px;
+}

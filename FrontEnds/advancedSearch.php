@@ -30,12 +30,18 @@ $userEmail = $_SESSION['userEmail'];
                 <label for="sortLatestStartDate">Sort By Latest Start Date</label>
                 <input type="radio" name="radioFilter" id="sortEarliestEndDate" value="sortEarliestEndDate" required>
                 <label for="sortEarliestEndDate">Sort By Earliest End Date</label>
-                <input type="radio" name="radioFilter" id="sortEarliestStartDate" value="sortEarliestStartDate" required>
+                <input type="radio" name="radioFilter" id="sortEarliestStartDate" value="sortEarliestStartDate"
+                    required>
                 <label for="sortEarliestStartDate">Sort By Earliest Start Date</label>
                 <button type="submit" id="btnFilter" name="btnFilter">Sort</button>
             </form>
         </div>
     </center>
+    <div id="lblHightlight_container">
+        <h2 id="lblViewMoreMemories"><b>
+                < </b> view all your memories</h2>
+        <h2 id="lblMainPage">Home Page<b> > </b></h2>
+    </div>
     <center>
         <div id="dividerLine"></div>
     </center>
@@ -118,6 +124,15 @@ $userEmail = $_SESSION['userEmail'];
     }
 
     ?>
+    <script>
+        document.getElementById("lblMainPage").onclick = function () {
+            document.location.href = 'http://localhost/Travelogger/FrontEnds/mainPage.php'
+        }
+
+        document.getElementById("lblViewMoreMemories").onclick = function () {
+            document.location.href = 'http://localhost/Travelogger/FrontEnds/allMemories.php'
+        }
+    </script>
 </body>
 
 </html>

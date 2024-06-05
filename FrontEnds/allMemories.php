@@ -27,6 +27,8 @@ include ("../phpOperations/OPEN_CONN.php");
 
     <h2 id="lblAdvancedSearch">Advanced Searching</h2>
  
+    <h2 id="lblMainPage">Home Page</h2>
+
     <center>
         <div id="dividerLine"></div>
     </center>
@@ -69,6 +71,9 @@ include ("../phpOperations/OPEN_CONN.php");
     <script>
         document.getElementById("lblAdvancedSearch").onclick = function () {
             document.location.href = 'http://localhost/Travelogger/FrontEnds/advancedSearch.php'
+        }
+        document.getElementById("lblMainPage").onclick = function () {
+            document.location.href = 'http://localhost/Travelogger/FrontEnds/mainPage.php'
         }
     </script>
 </body>
