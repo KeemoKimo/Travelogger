@@ -128,3 +128,34 @@ body {
     transform: scale(1.03);
     transition: .8s;
 }
+
+#btnFilter{
+    background-color: yellow;
+    color: black;
+    font-size: 21px;
+    border-radius: 15px;
+    border: none;
+    padding: 20px;
+    width: 150px;
+    margin-left: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#btnFilter:hover{
+    cursor: pointer;
+    opacity: 90%;
+    transform: scale(1.03);
+    transition: .8s;
+}
+
+#sortLatestStartDate{
+    margin-left: 30px;
+}
+
+#sortEarliestEndDate{
+    margin-left: 30px;
+}
+
+#sortEarliestStartDate{
+    margin-left: 30px;
+}
