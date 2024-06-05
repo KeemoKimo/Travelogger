@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+.manrope-mainfont {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+body {
+    font-family: manrope;
+    background-color: #f2ece5;
+}
+
+#mainTopText{
+    text-align: center;
+    font-weight: lighter;
+    margin-top: 60px;
+}
+
+#formDiv{
+    margin-top: 60px;
+    width: 800px;
+    height: 100px;
+    display: flex;
+}
+
+#txtSearch{
+    width: 600px;
+    height: 60px;
+    font-size: 21px;
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#btnSearch{
+    width: 150px;
+    height: 60px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    background-color: green;
+    font-size: 21px;
+    margin-left: 25px;
+}
+
+#aFull {
+    display: block;
+    width: 90%;
+    height: 570px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    text-align: center;
+    border-radius: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+#aFull:hover{
+    cursor: pointer;
+    opacity: 90%;
+    transform: scale(1.03);
+    transition: .8s;
+}
+
+.insideContainer{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.insideContainer_imgCont {
+    width: 500px;
+    height: 570px;
+    float: left;
+    border-radius: 15px 0 0 15px;
+}
+
+.insideContainer_imgCont img {
+    height: 570px;
+    object-fit: cover;
+    border-radius: 15px 0 0 15px;
+}
+
+#lblLocation {
+    font-size: 36px;
+    padding-top: 50px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+#lblTravelDates_Container {
+    width: 360px;
+    display: flex;
+    text-align: center;
+    font-size: 20px;
+    margin: 0 auto;
+    padding-top: -10px;
+}
+
+#lblDesc {
+    height: 300px;
+    font-size: 18px;
+    overflow: hidden;
+    padding-left: 100px;
+    padding-right: 100px;
+    line-height: 50px;
+    font-weight: lighter;
+    text-decoration: none;
+
+}
+
+
+#dividerLine {
+    width: 95%;
+    height: 1px;
+    border-radius: 10px;
+    background-color: black;
+    margin-top: 60px;
+}
+
+#btnSearch:hover{
+    cursor: pointer;
+    opacity: 90%;
+    transform: scale(1.03);
+    transition: .8s;
+}

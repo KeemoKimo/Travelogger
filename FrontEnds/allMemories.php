@@ -2,13 +2,6 @@
 
 session_start();
 include ("../phpOperations/OPEN_CONN.php");
-// $userEmail = $_SESSION['userEmail'];
-// $sql = mysqli_query($conn, "select * from tbltrips where user = '$userEmail'");
-// $rows = mysqli_fetch_all($sql, MYSQLI_ASSOC);
-// foreach ($rows as $data) {
-//     print_r($data['coverImg']);
-// }
-
 ?>
 
 <html lang="en">
@@ -31,6 +24,9 @@ include ("../phpOperations/OPEN_CONN.php");
     $num = mysqli_num_rows($sql);
     echo "<h3 id='lblTotalTrip'>Your total amount of trip : <b> $num </b> </h3>";
     ?>
+
+    <h2 id="lblAdvancedSearch">Advanced Searching</h2>
+ 
     <center>
         <div id="dividerLine"></div>
     </center>
@@ -69,5 +65,11 @@ include ("../phpOperations/OPEN_CONN.php");
         }
     }
     ?>
+
+    <script>
+        document.getElementById("lblAdvancedSearch").onclick = function () {
+            document.location.href = 'http://localhost/Travelogger/FrontEnds/advancedSearch.php'
+        }
+    </script>
 </body>
 </html>

@@ -148,7 +148,7 @@ $userEmail_temp = $_SESSION['userEmail'];
         document.getElementById("lblViewMoreMemories").onclick = function () {
             document.location.href = 'http://localhost/Travelogger/FrontEnds/allMemories.php'
         }
-        
+
         document.getElementById("lblViewMoreMemories_img").onclick = function () {
             document.location.href = 'http://localhost/Travelogger/FrontEnds/allMemories.php'
         }
