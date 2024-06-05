@@ -7,6 +7,7 @@
 }
 
 body {
+    background-color: #f2ece5;
     font-family: manrope;
 }
 
@@ -209,3 +210,48 @@ body {
     padding-right: 100px
 }
 
+#aFull_displayImg{
+    text-decoration: none;
+    color: black;
+}
+
+.insideContainer_displayImg{
+    width: 55%;
+    height: 570px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+.insideContainer_displayImg:hover{
+    cursor: pointer;
+    opacity: 80%;
+    transform: scale(1.02);
+    transition: .8s;
+}
+
+.insideContainer_imgCont_displayImg {
+    width: 100%;
+    height: 570px;
+    border-radius: 15px;
+}
+
+.insideContainer_imgCont_displayImg img {
+    height: 570px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+#lblViewMoreMemories_img {
+    font-weight: lighter;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#lblViewMoreMemories_img:hover{
+    color: rgb(0, 89, 255);
+    opacity: 70%;
+    transition: 1s;
+    font-weight: bold;
+}

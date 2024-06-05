@@ -5,6 +5,7 @@ $username = "root";
 $password = "";
 $database = "travelogger";
 $conn = mysqli_connect($servername, $username, $password, $database);
+$userEmail_temp = $_SESSION['userEmail'];
 ?>
 
 <html lang="en">
@@ -85,6 +86,35 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 
     <div id="lineDivider"></div>
 
+    <h1 id="lblYourLatestTravel">Travel <b>Images</b></h1>
+
+    <div style="margin-top:60px;"></div>
+    <?php
+    $sql = mysqli_query($conn, "select * from tripimagesdesc where user = '$userEmail' order by RAND() LIMIT 10");
+    $num = mysqli_num_rows($sql);
+    if ($num > 0) {
+        while ($result = mysqli_fetch_array($sql)) {
+            // echo '<h1>'.$result["tripID"].'</h1>';
+            echo '<center>
+                        <a href=memoryOverview.php?id=' . $result["tripID"] . ' id="aFull_displayImg">
+                            <div class="insideContainer_displayImg"> 
+                                <div class="insideContainer_imgCont_displayImg">   
+                                    <img src="../' . $result['imageName'] . '" width="100%">
+                                </div>   
+                            </div>
+                        </a>
+                    </center> 
+                    <div style="margin-top: 40px;"></div>
+                    ';
+            echo "</br>";
+        }
+    }
+    ?>
+
+    <h2 id="lblViewMoreMemories_img">view all your memories</h2>
+
+    <div id="lineDivider"></div>
+
     <script>
         var pfpVar = 0
         document.getElementById("imgProfile").onclick = function () {
@@ -116,6 +146,10 @@ $conn = mysqli_connect($servername, $username, $password, $database);
         }
 
         document.getElementById("lblViewMoreMemories").onclick = function () {
+            document.location.href = 'http://localhost/Travelogger/FrontEnds/allMemories.php'
+        }
+        
+        document.getElementById("lblViewMoreMemories_img").onclick = function () {
             document.location.href = 'http://localhost/Travelogger/FrontEnds/allMemories.php'
         }
 

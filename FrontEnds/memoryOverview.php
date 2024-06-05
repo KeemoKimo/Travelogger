@@ -89,14 +89,15 @@ if (isset($_GET['id'])) {
         $temp_name = $_FILES['newPic_file']['tmp_name'];
         $folder = '../uploads/' . $file_name;
         $imgDate = $_POST['pickDate'];
+        $userEmail = $_SESSION['userEmail'];
 
         $sqlCount = mysqli_query($conn, "SELECT * FROM tripimagesdesc WHERE tripID = '$tripID'");
         $sqlCount_num = mysqli_num_rows($sqlCount);
 
         if ($sqlCount_num <= 20) {
             $sql = "INSERT INTO `tripimagesdesc` ( `tripID`,  
-            `imageName`, `imgDate`, `imgDesc`) VALUES ('$tripID',  
-            'uploads/$file_name', '$imgDate', '$imageDesc')";
+            `imageName`, `imgDate`, `imgDesc`, `user`) VALUES ('$tripID',  
+            'uploads/$file_name', '$imgDate', '$imageDesc', '$userEmail')";
             $result = mysqli_query($conn, $sql);
 
             if (move_uploaded_file($temp_name, $folder)) {
@@ -108,7 +109,7 @@ if (isset($_GET['id'])) {
                 echo '</script>';
             } else {
                 echo '<script language="javascript">';
-                echo 'alert("Image Added Failed!")';
+                echo 'alert("You have maximum images added!")';
                 echo '</script>';
                 echo '<script language="javascript">';
                 echo 'document.location.href = "http://localhost/Travelogger/FrontEnds/allMemories.php"';
