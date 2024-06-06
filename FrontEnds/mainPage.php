@@ -111,6 +111,29 @@ $userEmail_temp = $_SESSION['userEmail'];
     }
     ?>
 
+
+    <h1 id="lblYourLatestTravel"><b>Countries</b> you've been to</h1>
+
+    <div style="margin-top:60px;"></div>
+
+    <?php
+    $sql = mysqli_query($conn, "select * from tbltrips where user = '$userEmail' order by RAND() LIMIT 10");
+    $num = mysqli_num_rows($sql);
+    if ($num > 0) {
+        while ($result = mysqli_fetch_array($sql)) {
+            $country = explode(",", $result["location"]);
+            echo '
+            <center>
+                <div id="countriesBeenToContainer">
+                    <a href="https://en.wikipedia.org/wiki/' . $country[1] . '" id="aCountry" target="_blank">'
+                . $country[1] . '</a>
+                </div>
+            </center>
+            ';
+        }
+    }
+    ?>
+
     <h2 id="lblViewMoreMemories_img">view all your memories</h2>
 
     <div id="lineDivider"></div>
