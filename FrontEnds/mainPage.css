@@ -130,7 +130,7 @@ body {
 }
 
 #editProfileContainer:hover {
-    background-color: #FFAE03;
+    background-color: #074173;
     color: white;
     transition: .5s;
 }
@@ -173,7 +173,7 @@ body {
 }
 
 #lblViewMoreMemories:hover {
-    color: rgb(0, 89, 255);
+    color: #074173;
     opacity: 70%;
     transition: 1s;
     font-weight: bold;
@@ -189,7 +189,7 @@ body {
 }
 
 #lblAddMemories:hover {
-    color: rgb(12, 155, 12);
+    color: #074173;
     opacity: 70%;
     transition: 1s;
     font-weight: bold;
@@ -251,7 +251,7 @@ body {
 }
 
 #lblViewMoreMemories_img:hover {
-    color: rgb(0, 89, 255);
+    color: #074173;
     opacity: 70%;
     transition: 1s;
     font-weight: bold;
@@ -275,7 +275,7 @@ body {
 }
 
 #countriesBeenToContainer a:hover{
-    color: green;
+    color: #074173;
     opacity: 70%;
     transition: 1s;
     font-weight: bold;

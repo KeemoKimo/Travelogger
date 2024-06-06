@@ -8,6 +8,7 @@
 
 body {
     font-family: manrope;
+    background-color: #f2ece5;
 }
 
 #imgProfile {
@@ -40,7 +41,7 @@ input[type="file"] {
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
-    background-color: green;
+    background-color: #074173;
     color: white;
     border-radius: 5px;
     font-size: 18px;
@@ -55,7 +56,7 @@ input[type="file"] {
     border: 1px solid #ccc;
     padding: 6px 12px;
     cursor: pointer;
-    background-color: green;
+    background-color: #074173;
     color: white;
     border-radius: 5px;
     font-size: 18px;
@@ -87,7 +88,6 @@ input[type="file"] {
 #previewContent{
     width: 700px;
     height: 700px;
-    background-color: red;
     margin-left: 32%;
     margin-top: 8%;
 }
@@ -150,7 +150,7 @@ input[type="file"] {
 #btnUpdate {
     width: 150px;
     padding: 10px;
-    background-color: green;
+    background-color: #074173;
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -176,7 +176,7 @@ input[type="file"] {
 }
 
 #lblViewMoreMemories:hover {
-    color: rgb(0, 89, 255);
+    color: #074173;
     opacity: 70%;
     transition: 1s;
     font-weight: bold;
@@ -192,7 +192,7 @@ input[type="file"] {
 }
 
 #lblMainPage:hover {
-    color: rgb(12, 155, 12);
+    color: #074173;
     opacity: 70%;
     transition: 1s;
     font-weight: bold;

@@ -41,7 +41,7 @@ body {
 #btnUpdate{
     width: 20%;
     height: 80px;
-    background-color: green;
+    background-color: #074173;
     color: white;
     border: 0;
     font-family: manrope;
@@ -79,7 +79,7 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     font-size: 26px;
     font-family: manrope;
-    background-color: green;
+    background-color: #074173;
     color: white;
 }
 
@@ -118,7 +118,7 @@ body {
 }
 
 #lblViewMoreMemories:hover {
-    color: rgb(0, 89, 255);
+    color: #074173;
     opacity: 70%;
     transition: 1s;
     font-weight: bold;
@@ -134,7 +134,7 @@ body {
 }
 
 #lblMainPage:hover {
-    color: rgb(12, 155, 12);
+    color: #074173;
     opacity: 70%;
     transition: 1s;
     font-weight: bold;
