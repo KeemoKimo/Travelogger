@@ -133,6 +133,5 @@ $userEmail = $_SESSION['userEmail'];
             document.location.href = 'http://localhost/Travelogger/FrontEnds/allMemories.php'
         }
     </script>
-</body>
-
-</html>
+    
+<?php include ("footer.php"); ?>

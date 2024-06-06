@@ -107,6 +107,5 @@ if (isset($_GET['id'])) {
             document.location.href = 'http://localhost/Travelogger/FrontEnds/allMemories.php'
         }
     </script>
-</body>
-
-</html>
+    
+<?php include ("footer.php"); ?>

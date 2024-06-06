@@ -76,5 +76,4 @@ include ("../phpOperations/OPEN_CONN.php");
             document.location.href = 'http://localhost/Travelogger/FrontEnds/mainPage.php'
         }
     </script>
-</body>
-</html>
+<?php include ("footer.php"); ?>

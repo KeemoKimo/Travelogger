@@ -62,6 +62,5 @@ $conn = mysqli_connect($servername, $username, $password, $database);
             document.location.href = 'http://localhost/Travelogger/FrontEnds/mainPage.php'
         }
     </script>
-</body>
-
-</html>
+    
+<?php include ("footer.php"); ?>

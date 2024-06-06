@@ -284,68 +284,68 @@ if (isset($_GET['id'])) {
         <h2 id="lblMainPage">Home Page<b> > </b></h2>
     </div>
 
-</body>
-<script>
 
-    document.getElementById("newImg_upload").onchange = function () {
-        document.getElementById("toHideElement").style.display = "block"
-        document.getElementById("pickDate").style.display = "block"
-        document.getElementById("txtDesc_newImg").style.display = "block"
-        const [file] = document.getElementById("newImg_upload").files
-        document.getElementById("btnAddImage").style.display = "inline-block"
-        document.getElementById("newImagePic").src = URL.createObjectURL(file)
-    }
+    <script>
 
-    document.getElementById("lblMainPage").onclick = function () {
+        document.getElementById("newImg_upload").onchange = function () {
+            document.getElementById("toHideElement").style.display = "block"
+            document.getElementById("pickDate").style.display = "block"
+            document.getElementById("txtDesc_newImg").style.display = "block"
+            const [file] = document.getElementById("newImg_upload").files
+            document.getElementById("btnAddImage").style.display = "inline-block"
+            document.getElementById("newImagePic").src = URL.createObjectURL(file)
+        }
+
+        document.getElementById("lblMainPage").onclick = function () {
             document.location.href = 'http://localhost/Travelogger/FrontEnds/mainPage.php'
-    }
+        }
 
-    document.getElementById("lblViewMoreMemories").onclick = function () {
+        document.getElementById("lblViewMoreMemories").onclick = function () {
             document.location.href = 'http://localhost/Travelogger/FrontEnds/allMemories.php'
-    }
-
-    document.getElementById("coverImgDiv").onmouseover = function () {
-        document.getElementById("editImage").style.display = "block"
-    }
-
-    document.getElementById("coverImgDiv").onmouseleave = function () {
-        document.getElementById("editImage").style.display = "none"
-    }
-
-    document.getElementById("coverImgDiv").onclick = function () {
-        document.getElementById("custom-file-upload").style.display = "block"
-    }
-
-    document.getElementById("editDescCont").onclick = function () {
-        document.getElementById("editPopUp").style.display = "block"
-    }
-
-    document.getElementById("editDate").onclick = function () {
-        document.getElementById("editTravelDates").style.display = "block"
-    }
-
-    document.getElementById("uploadImageEmptyDiv").onclick = function () {
-        document.getElementById("addNewImgForm").style.display = "block"
-    }
-
-    document.getElementById("file-upload").onchange = function () {
-        const [file] = document.getElementById("file-upload").files
-        document.getElementById("btnSubmit").style.display = "inline-block";
-        document.getElementById("imgProfile").src = URL.createObjectURL(file)
-    }
-
-
-    window.onclick = function (event) {
-        if (event.target == document.getElementById("editPopUp")) {
-            document.getElementById("editPopUp").style.display = "none"
         }
-        else if (event.target == document.getElementById("editTravelDates")) {
-            document.getElementById("editTravelDates").style.display = "none"
-        }
-        else if (event.target == document.getElementById("addNewImgForm")) {
-            document.getElementById("addNewImgForm").style.display = "none"
-        }
-    }
-</script>
 
-</html>
+        document.getElementById("coverImgDiv").onmouseover = function () {
+            document.getElementById("editImage").style.display = "block"
+        }
+
+        document.getElementById("coverImgDiv").onmouseleave = function () {
+            document.getElementById("editImage").style.display = "none"
+        }
+
+        document.getElementById("coverImgDiv").onclick = function () {
+            document.getElementById("custom-file-upload").style.display = "block"
+        }
+
+        document.getElementById("editDescCont").onclick = function () {
+            document.getElementById("editPopUp").style.display = "block"
+        }
+
+        document.getElementById("editDate").onclick = function () {
+            document.getElementById("editTravelDates").style.display = "block"
+        }
+
+        document.getElementById("uploadImageEmptyDiv").onclick = function () {
+            document.getElementById("addNewImgForm").style.display = "block"
+        }
+
+        document.getElementById("file-upload").onchange = function () {
+            const [file] = document.getElementById("file-upload").files
+            document.getElementById("btnSubmit").style.display = "inline-block";
+            document.getElementById("imgProfile").src = URL.createObjectURL(file)
+        }
+
+
+        window.onclick = function (event) {
+            if (event.target == document.getElementById("editPopUp")) {
+                document.getElementById("editPopUp").style.display = "none"
+            }
+            else if (event.target == document.getElementById("editTravelDates")) {
+                document.getElementById("editTravelDates").style.display = "none"
+            }
+            else if (event.target == document.getElementById("addNewImgForm")) {
+                document.getElementById("addNewImgForm").style.display = "none"
+            }
+        }
+    </script>
+
+<?php include ("footer.php"); ?>

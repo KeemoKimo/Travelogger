@@ -136,8 +136,6 @@ $userEmail_temp = $_SESSION['userEmail'];
 
     <h2 id="lblViewMoreMemories_img">view all your memories</h2>
 
-    <div id="lineDivider"></div>
-
     <script>
         var pfpVar = 0
         document.getElementById("imgProfile").onclick = function () {
@@ -177,6 +175,5 @@ $userEmail_temp = $_SESSION['userEmail'];
         }
 
     </script>
-</body>
 
-</html>
+<?php include("footer.php"); ?>

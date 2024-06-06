@@ -161,6 +161,5 @@ if (isset($_POST['submit'])) {
         }
 
     </script>
-</body>
-
-</html>
+    
+<?php include("footer.php"); ?>
